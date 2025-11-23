@@ -117,7 +117,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="sobre" className="py-24 bg-clr2 ">
+      <section id="sobre" className="lg:pt-24 lg:pb-24 pt-20 pb-4 bg-clr2 ">
         <div className="max-w-7xl mx-auto px-6">
           <h3 className="text-4xl font-bold mb-16 text-center">Como Trabalhamos</h3>
 
@@ -180,47 +180,47 @@ export default function Home() {
       </section>
 
  
-      <footer id="contato" className="bg-clr1 text-clr2 pt-14 pb-4">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 pb-6">
-          <div>
-            <h4 className="text-xl font-semibold">
-              Torodan - Marketing Digital
-            </h4>
-            <p className="text-sm mt-2">Transformando ideias em resultados.</p>
-          </div>
+<footer id="contato" className="bg-clr1 text-clr2 pt-14 pb-4">
+  <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-8 pb-6 px-6 text-center md:text-left">
+    
+    <div>
+      <h4 className="text-xl font-semibold">Torodan - Marketing Digital</h4>
+      <p className="text-sm mt-2">Transformando ideias em resultados.</p>
+    </div>
 
-          <div className="flex gap-4">
-            <a
-              href="mailto:torodandigital@gmail.com"
-              className="hover:text-clr3 transition"
-            >
-              <Mail className="w-5 h-5" />
-            </a>
+    <div className="flex gap-6 text-xl">
+      <a
+        href="mailto:torodandigital@gmail.com"
+        className="hover:text-clr3 transition"
+      >
+        <Mail className="w-6 h-6" />
+      </a>
 
-            <a
-              href="https://wa.me/5512981622637"
-              target="_blank"
-              className="hover:text-clr3 transition"
-            >
-              <FaWhatsapp className="w-5 h-5" />
-            </a>
+      <a
+        href="https://wa.me/5512981622637"
+        target="_blank"
+        className="hover:text-clr3 transition"
+      >
+        <FaWhatsapp className="w-6 h-6" />
+      </a>
 
-            <a
-              href="https://instagram.com/torodan.digital"
-              className="hover:text-clr3 transition"
-              target="_blank"
-            >
-              <Instagram className="w-5 h-5" />
-            </a>
-          </div>
-        </div>
+      <a
+        href="https://instagram.com/torodan.digital"
+        className="hover:text-clr3 transition"
+        target="_blank"
+      >
+        <Instagram className="w-6 h-6" />
+      </a>
+    </div>
+  </div>
 
-        <div className="h-px my-8 bg-clr2/40 max-w-7xl mx-auto"></div>
+  <div className="h-px my-8 bg-clr2/40 max-w-7xl mx-auto"></div>
 
-        <p className="text-center text-xs mt-6 opacity-70">
-          © {new Date().getFullYear()} Torodan. Todos os direitos reservados.
-        </p>
-      </footer>
+  <p className="text-center text-xs mt-6 opacity-70">
+    © {new Date().getFullYear()} Torodan. Todos os direitos reservados.
+  </p>
+</footer>
+
     </div>
   );
 }

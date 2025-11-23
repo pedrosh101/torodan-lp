@@ -22,64 +22,38 @@ export default function Brands() {
             }),
           ]}
         >
-          <CarouselContent>
-            <CarouselItem className="basis-1/4 flex">
-              <a href="https://estudiomasca.com" target="_blank">
-                <Image
-                  src={brand1}
-                  alt="brand1"
-                  width={180}
-                  priority
-                  className="mt-3"
-                />
-              </a>
-            </CarouselItem>
-            <CarouselItem className="basis-1/4 flex">
-              <a href="https://allyribeiro.com/" target="_blank">
-                <Image
-                  src={brand2}
-                  alt="brand2"
-                  width={180}
-                  priority
-                  className="mt-3"
-                />
-              </a>
-            </CarouselItem>
-            <CarouselItem className="basis-1/4 flex">
-              <a href="https://nicolevalente.com.br/" target="_blank">
-                <Image
-                  src={brand3}
-                  alt="brand3"
-                  width={180}
-                  priority
-                  className="mt-3"
-                />
-              </a>
-            </CarouselItem>
-            <CarouselItem className="basis-1/4 flex">
-              <a href="https://viggianiarquitetura.com/" target="_blank">
-                <Image
-                  src={brand4}
-                  alt="brand4"
-                  width={180}
-                  priority
-                  className="mt-3"
-                />
-              </a>
-            </CarouselItem>
-            <CarouselItem className="basis-1/4 flex">
-              <a href="https://arlivreeditora.com.br/" target="_blank">
-                <Image
-                  src={brand5}
-                  alt="brand5"
-                  width={180}
-                  priority
-                  className="mt-3"
-                />
-              </a>
-            </CarouselItem>
-            
-          </CarouselContent>
+         <CarouselContent>
+  <CarouselItem className="basis-1/2 md:basis-1/4 flex">
+    <a href="https://estudiomasca.com" target="_blank">
+      <Image src={brand1} alt="brand1" width={180} priority className="mt-3" />
+    </a>
+  </CarouselItem>
+
+  <CarouselItem className="basis-1/2 md:basis-1/4 flex">
+    <a href="https://allyribeiro.com/" target="_blank">
+      <Image src={brand2} alt="brand2" width={180} priority className="mt-3" />
+    </a>
+  </CarouselItem>
+
+  <CarouselItem className="basis-1/2 md:basis-1/4 flex">
+    <a href="https://nicolevalente.com.br/" target="_blank">
+      <Image src={brand3} alt="brand3" width={180} priority className="mt-3" />
+    </a>
+  </CarouselItem>
+
+  <CarouselItem className="basis-1/2 md:basis-1/4 flex">
+    <a href="https://viggianiarquitetura.com/" target="_blank">
+      <Image src={brand4} alt="brand4" width={180} priority className="mt-3" />
+    </a>
+  </CarouselItem>
+
+  <CarouselItem className="basis-1/2 md:basis-1/4 flex">
+    <a href="https://arlivreeditora.com.br/" target="_blank">
+      <Image src={brand5} alt="brand5" width={180} priority className="mt-3" />
+    </a>
+  </CarouselItem>
+</CarouselContent>
+
         </Carousel>
       </div>
     </section>
