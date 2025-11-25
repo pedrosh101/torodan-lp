@@ -9,6 +9,7 @@ import brand2 from "../../public/Frame17.png";
 import brand3 from "../../public/Frame18.png";
 import brand4 from "../../public/Frame19.png";
 import brand5 from "../../public/Frame20.png";
+import brand6 from "../../public/Frame21.png";
 
 
 export default function Brands() {
@@ -50,6 +51,12 @@ export default function Brands() {
   <CarouselItem className="basis-1/2 md:basis-1/4 flex">
     <a href="https://arlivreeditora.com.br/" target="_blank">
       <Image src={brand5} alt="brand5" width={180} priority className="mt-3" />
+    </a>
+  </CarouselItem>
+
+  <CarouselItem className="basis-1/2 md:basis-1/4 flex">
+    <a href="https://artofmala.netlify.app/" target="_blank">
+      <Image src={brand6} alt="brand5" width={180} priority className="mt-3" />
     </a>
   </CarouselItem>
 </CarouselContent>

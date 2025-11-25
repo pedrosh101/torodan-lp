@@ -46,7 +46,7 @@ export default function Home() {
         className="pt-20 pb-0 lg:pt-24 lg:pb-24 bg-linear-to-b from-clr1 via-clr1 to-clr2"
       >
         <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-32">
+          <div className="mb-26 md:mb-32">
             <h3 className="text-4xl font-bold text-center mb-14 text-clr2">
               Nossos Serviços
             </h3>
@@ -136,7 +136,7 @@ export default function Home() {
                     className="flex items-start gap-4 group hover:translate-x-1 transition-all cursor-default"
                   >
                     <div className="w-8 h-8 flex justify-center items-center rounded-full bg-clr3 text-clr2 shadow-md">
-                      <CheckCircle className="w-5 h-5" />
+                      <CheckCircle className="w-8 lg:w-5 h-5" />
                     </div>
 
                     <p className="text-clr2/90 leading-relaxed text-lg font-extralight">
