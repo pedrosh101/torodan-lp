@@ -1,21 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { FaWhatsapp } from "react-icons/fa";
-
-import {
-  Globe,
-  Rocket,
-  Target,
-  Instagram,
-  Mail,
-  CheckCircle,
-  MessageCircle,
-} from "lucide-react";
-
+import { Globe, Rocket, Target, Instagram, Mail, CheckCircle } from "lucide-react";
 import Navbar from "@/components/navbar";
 import Brands from "@/components/brands";
 import Image from "next/image";
 import computer from "../../public/computer.jpg";
+
+const W = "max-w-screen-2xl mx-auto px-6 md:px-16";
 
 export default function Home() {
   return (
@@ -23,107 +14,170 @@ export default function Home() {
       <Navbar />
 
       {/* HERO */}
-      <section className="relative flex flex-col items-center justify-center text-center pt-44 pb-36 px-6 overflow-hidden">
-        <h2 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight">
-          Impulsione seu negócio <br />
-          com <span className="text-clr3">Marketing Digital</span>
-        </h2>
-        <p className="max-w-2xl text-lg text-clr1/70 mb-10">
-          A Torodan é especialista em estratégias digitais que geram resultados
-          reais. Aumente sua presença online, conquiste novos clientes e
-          destaque sua marca.
-        </p>
-        <Button
-          size="lg"
-          className="bg-clr3 hover:bg-clr1 text-clr2 font-semibold px-10 py-6 transition-transform hover:scale-105 cursor-pointer"
-        >
-          <a href="#etapas">Saiba mais</a>
-        </Button>
+      <section className="relative flex flex-col items-start justify-end min-h-screen pb-24 pt-40 overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-[0.035]"
+          style={{
+            backgroundImage:
+              "linear-gradient(var(--clr1) 1px, transparent 1px), linear-gradient(90deg, var(--clr1) 1px, transparent 1px)",
+            backgroundSize: "64px 64px",
+          }}
+        />
+
+        <span className="absolute top-40 right-6 md:right-16 text-[10px] tracking-[0.3em] uppercase text-clr1/70 font-medium">
+          Marketing Digital
+        </span>
+
+        <div className={`relative w-full ${W}`}>
+          <p className="text-[11px] tracking-[0.35em] uppercase text-clr3 font-semibold mb-8">
+            Torodan — Agência Digital
+          </p>
+          <h1 className="text-5xl md:text-[5.5rem] font-extrabold leading-[1.02] tracking-[-0.03em] mb-10">
+            Impulsione seu negócio
+            <br />
+            com{" "}
+            <em className="not-italic text-clr3 relative inline-block">
+              Marketing Digital
+              <span className="absolute bottom-1 left-0 w-full h-px bg-clr3/40" aria-hidden />
+            </em>
+          </h1>
+          <p className="max-w-xl text-clr1/60 text-lg leading-relaxed mb-14 font-light">
+            Aumente sua presença online, conquiste novos clientes e destaque sua marca.
+          </p>
+
+          <div className="flex items-center gap-6">
+            <a href="#etapas">
+              <Button
+                size="lg"
+                className="bg-clr3 hover:bg-clr1 text-clr2 transition-all duration-300 hover:scale-105 cursor-pointer tracking-[0.08em] font-medium px-10 py-6 rounded-full"
+              >
+                Saiba mais
+              </Button>
+            </a>
+            <a
+              href="#servicos"
+              className="text-sm text-clr1/60 hover:text-clr1 transition-colors tracking-widest uppercase font-medium underline underline-offset-4 decoration-clr1/20"
+            >
+              Ver serviços
+            </a>
+          </div>
+        </div>
+
+
       </section>
 
-      <section
-        id="servicos"
-        className="pt-20 pb-0 lg:pt-24 lg:pb-24 bg-linear-to-b from-clr1 via-clr1 to-clr2"
-      >
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-26 md:mb-32">
-            <h3 className="text-4xl font-bold text-center mb-14 text-clr2">
-              Nossos Serviços
-            </h3>
-            <div className="grid md:grid-cols-3 gap-10">
-              {[
-                {
-                  icon: Globe,
-                  title: "Websites Otimizados",
-                  desc: "Desenvolvimento de sites rápidos, responsivos e prontos para converter visitantes em clientes.",
-                },
-                {
-                  icon: Target,
-                  title: "Gestão de Tráfego",
-                  desc: "Campanhas inteligentes no Google, Facebook e Instagram para gerar leads qualificados.",
-                },
-                {
-                  icon: Rocket,
-                  title: "Branding & Identidade",
-                  desc: "Construímos marcas fortes e consistentes que conectam com seu público.",
-                },
-              ].map(({ icon: Icon, title, desc }, i) => (
-                <Card
-                  key={i}
-                  className="bg-clr2 text-clr1 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 rounded-2xl cursor-default"
-                >
-                  <CardContent className="p-10 flex flex-col items-center text-center">
-                    <Icon className="w-12 h-12 mb-5 text-clr3" />
-                    <h4 className="text-xl font-semibold mb-3">{title}</h4>
-                    <p className="text-clr1/80 leading-relaxed">{desc}</p>
-                  </CardContent>
-                </Card>
-              ))}
+      {/* SERVICES */}
+      <section id="servicos" className="py-32 bg-clr1">
+        <div className={W}>
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6">
+            <div>
+              <p className="text-[10px] tracking-[0.35em] uppercase text-clr3 font-semibold mb-4">
+                O que fazemos
+              </p>
+              <h2 className="text-4xl md:text-5xl font-bold text-clr2 leading-tight tracking-[-0.02em]">
+                Nossos Serviços
+              </h2>
             </div>
+            <p className="text-clr2/50 max-w-sm text-sm leading-relaxed font-light">
+              Soluções integradas para cada etapa da sua presença digital.
+            </p>
           </div>
 
-          <div id="etapas">
-            <h3 className="text-4xl font-bold text-center mb-16 text-white">
-              Como Funciona?
-            </h3>
-            <div className="grid md:grid-cols-4 gap-8">
-              {["Diagnóstico", "Estratégia", "Execução", "Resultados"].map(
-                (title, i) => (
-                  <Card
-                    key={i}
-                    className="bg-clr2 border border-clr1/10 shadow-md hover:shadow-xl transition-all duration-300 rounded-2xl cursor-default"
-                  >
-                    <CardContent className="flex flex-col text-center items-center py-5 px-6">
-                      <div className="text-clr2 text-5xl font-extrabold bg-clr3 flex justify-center items-center rounded-full w-20 h-20 shadow-lg mb-4">
-                        {i + 1}
-                      </div>
-                      <h4 className="font-semibold text-lg mb-2">{title}</h4>
-                      <p className="text-clr1/80 text-base leading-relaxed">
-                        {
-                          [
-                            "Entendemos o seu negócio, público e desafios.",
-                            "Planejamos as melhores ações para alcançar resultados.",
-                            "Colocamos em prática as campanhas e acompanhamos de perto.",
-                            "Analisamos e otimizamos continuamente para crescer ainda mais.",
-                          ][i]
-                        }
-                      </p>
-                    </CardContent>
-                  </Card>
-                )
-              )}
-            </div>
+          <div className="grid md:grid-cols-3 gap-px bg-clr2/10">
+            {[
+              {
+                icon: Globe,
+                title: "Websites Otimizados",
+                desc: "Desenvolvimento de sites rápidos, responsivos e prontos para converter visitantes em clientes.",
+                num: "01",
+              },
+              {
+                icon: Target,
+                title: "Gestão de Tráfego",
+                desc: "Campanhas inteligentes no Google, Facebook e Instagram para gerar leads qualificados.",
+                num: "02",
+              },
+              {
+                icon: Rocket,
+                title: "Branding & Identidade",
+                desc: "Construímos marcas fortes e consistentes que conectam com seu público.",
+                num: "03",
+              },
+            ].map(({ icon: Icon, title, desc, num }, i) => (
+              <div
+                key={i}
+                className="bg-clr1 p-10 md:p-12 flex flex-col gap-8 group hover:bg-clr3 transition-all duration-500 cursor-default"
+              >
+                <div className="flex items-start justify-between">
+                  <Icon className="w-8 h-8 text-clr3 group-hover:text-clr2 transition-colors duration-500" />
+                  <span className="text-[10px] tracking-[0.3em] text-clr2/30 group-hover:text-clr2/60 font-medium transition-colors duration-500">
+                    {num}
+                  </span>
+                </div>
+                <div>
+                  <h4 className="text-xl font-semibold mb-3 text-clr2 leading-snug tracking-[-0.01em]">
+                    {title}
+                  </h4>
+                  <p className="text-clr2/60 group-hover:text-clr2/80 leading-relaxed text-sm transition-colors duration-500">
+                    {desc}
+                  </p>
+                </div>
+                <div className="mt-auto">
+                  <div className="w-8 h-px bg-clr3 group-hover:bg-clr2 group-hover:w-16 transition-all duration-500" />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section id="sobre" className="lg:pt-24 lg:pb-24 pt-20 pb-4 bg-clr2 ">
-        <div className="max-w-7xl mx-auto px-6">
-          <h3 className="text-4xl font-bold mb-16 text-center">Como Trabalhamos</h3>
+      {/* HOW IT WORKS */}
+      <section id="etapas" className="py-32 bg-clr2">
+        <div className={W}>
+          <div className="mb-20">
+            <p className="text-[10px] tracking-[0.35em] uppercase text-clr3 font-semibold mb-4">
+              O processo
+            </p>
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight tracking-[-0.02em]">
+              Como Funciona?
+            </h2>
+          </div>
 
-          <div className="grid md:grid-cols-2 gap-14">
-            <div className="bg-clr1 p-12 rounded-3xl shadow-xl border border-clr1/20 backdrop-blur-sm">
-              <div className="space-y-6">
+          <div className="grid md:grid-cols-4 gap-0 border border-clr1/10">
+            {[
+              { title: "Diagnóstico", desc: "Entendemos o seu negócio, público e desafios." },
+              { title: "Estratégia", desc: "Planejamos as melhores ações para alcançar resultados." },
+              { title: "Execução", desc: "Colocamos em prática as campanhas e acompanhamos de perto." },
+              { title: "Resultados", desc: "Analisamos e otimizamos continuamente para crescer ainda mais." },
+            ].map((step, i) => (
+              <div
+                key={i}
+                className="relative p-10 border-r border-clr1/10 last:border-r-0 group hover:bg-clr1/5 transition-colors duration-300 cursor-default"
+              >
+                <span className="block text-[3.5rem] font-extrabold text-clr3/20 leading-none mb-8 group-hover:text-clr3/40 transition-colors duration-300">
+                  0{i + 1}
+                </span>
+                <h4 className="font-semibold text-base mb-3 tracking-[-0.01em]">{step.title}</h4>
+                <p className="text-clr1/50 text-sm leading-relaxed font-light">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* HOW WE WORK */}
+      <section id="sobre" className="py-32 bg-clr2">
+        <div className={W}>
+          <div className="grid md:grid-cols-2 gap-20 items-center">
+            <div>
+              <p className="text-[10px] tracking-[0.35em] uppercase text-clr3 font-semibold mb-4">
+                Nossa abordagem
+              </p>
+              <h2 className="text-4xl md:text-5xl font-bold leading-tight tracking-[-0.02em] mb-14">
+                Como Trabalhamos
+              </h2>
+
+              <div className="space-y-7">
                 {[
                   "Estratégias sob medida para cada negócio.",
                   "Foco total em performance e resultados reais.",
@@ -131,15 +185,11 @@ export default function Home() {
                   "Acompanhamento técnico contínuo.",
                   "Compromisso com prazos e qualidade.",
                 ].map((text, i) => (
-                  <div
-                    key={i}
-                    className="flex items-start gap-4 group hover:translate-x-1 transition-all cursor-default"
-                  >
-                    <div className="w-8 h-8 flex justify-center items-center rounded-full bg-clr3 text-clr2 shadow-md">
-                      <CheckCircle className="w-8 lg:w-5 h-5" />
+                  <div key={i} className="flex items-start gap-5 group cursor-default">
+                    <div className="shrink-0 w-5 h-5 mt-0.5">
+                      <CheckCircle className="w-5 h-5 text-clr3" />
                     </div>
-
-                    <p className="text-clr2/90 leading-relaxed text-lg font-extralight">
+                    <p className="text-clr1/70 leading-relaxed text-base font-light group-hover:text-clr1 transition-colors duration-200">
                       {text}
                     </p>
                   </div>
@@ -147,11 +197,14 @@ export default function Home() {
               </div>
             </div>
 
-            <Image
-              src={computer}
-              alt="Computador"
-              className="rounded-xl shadow-xl object-cover w-full"
-            />
+            <div className="relative">
+              <div className="absolute -inset-4 bg-clr3/5 rounded-3xl -z-10" />
+              <Image
+                src={computer}
+                alt="Computador"
+                className="rounded-2xl shadow-2xl object-cover w-full aspect-4/3"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -159,68 +212,90 @@ export default function Home() {
       <Brands />
 
       {/* CTA */}
-      <section className="bg-clr3 text-clr2 lg:py-24 py-16 px-4 text-center">
-        <h3 className="text-4xl font-bold mb-4">
-          Pronto para alavancar seu negócio?
-        </h3>
-        <p className="mb-10 text-lg text-clr2/90">
-          Entre em contato e descubra como a Torodan pode ajudar sua marca a
-          crescer.
-        </p>
-
-        <a href="https://wa.me/5512981622637" target="_blank">
-          <Button
-            size="lg"
-            className="bg-clr2 text-clr1 hover:bg-clr1 hover:text-clr2 transition-transform hover:scale-105 px-10 py-6 font-semibold cursor-pointer"
-          >
-            Solicitar Orçamento
-            <FaWhatsapp />
-          </Button>
-        </a>
+      <section className="relative py-32 bg-clr3 overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-[0.06]"
+          style={{
+            backgroundImage:
+              "linear-gradient(var(--clr2) 1px, transparent 1px), linear-gradient(90deg, var(--clr2) 1px, transparent 1px)",
+            backgroundSize: "48px 48px",
+          }}
+        />
+        <div className={`relative ${W}`}>
+          <p className="text-[10px] tracking-[0.35em] uppercase text-clr2/60 font-semibold mb-6">
+            Vamos começar
+          </p>
+          <h2 className="text-4xl md:text-6xl font-bold text-clr2 leading-[1.05] tracking-[-0.03em] mb-8">
+            Pronto para alavancar
+            <br />
+            seu negócio?
+          </h2>
+          <p className="text-clr2/70 text-lg mb-12 font-light leading-relaxed max-w-xl">
+            Entre em contato e descubra como a Torodan pode ajudar sua marca a crescer.
+          </p>
+          <a href="https://wa.me/5512981622637" target="_blank">
+            <Button
+              size="lg"
+              className="bg-clr2 text-clr3 hover:bg-clr1 hover:text-clr2 transition-all duration-300 hover:scale-105 px-10 py-6 font-semibold cursor-pointer tracking-[0.08em] rounded-full gap-3"
+            >
+              Solicitar Orçamento
+              <FaWhatsapp className="w-5 h-5" />
+            </Button>
+          </a>
+        </div>
       </section>
 
- 
-<footer id="contato" className="bg-clr1 text-clr2 pt-14 pb-4">
-  <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-8 pb-6 px-6 text-center md:text-left">
-    
-    <div>
-      <h4 className="text-xl font-semibold">Torodan - Marketing Digital</h4>
-      <p className="text-sm mt-2">Transformando ideias em resultados.</p>
-    </div>
+      {/* FOOTER */}
+      <footer id="contato" className="bg-clr1 text-clr2">
+        <div className={`${W} pt-16 pb-10`}>
+          <div className="flex flex-col md:flex-row justify-between items-start gap-10 pb-12 border-b border-clr2/10">
+            <div>
+              <h4 className="text-base font-semibold tracking-[-0.01em]">Torodan</h4>
+              <p className="text-xs mt-2 text-clr2/40 font-light tracking-wide">
+                Transformando ideias em resultados.
+              </p>
+            </div>
 
-    <div className="flex gap-6 text-xl">
-      <a
-        href="mailto:torodandigital@gmail.com"
-        className="hover:text-clr3 transition"
-      >
-        <Mail className="w-6 h-6" />
-      </a>
+            <div className="flex flex-col md:flex-row gap-10 md:gap-20 text-sm">
+              <div className="flex flex-col gap-3">
+                <span className="text-[9px] tracking-[0.35em] uppercase text-clr2/30 font-medium">
+                  Navegação
+                </span>
+                {["Serviços", "Etapas", "Como Trabalhamos", "Contato"].map((item) => (
+                  <a
+                    key={item}
+                    href={`#${item.toLowerCase().replace(/\s/g, "")}`}
+                    className="text-clr2/60 hover:text-clr3 transition-colors text-xs font-light"
+                  >
+                    {item}
+                  </a>
+                ))}
+              </div>
 
-      <a
-        href="https://wa.me/5512981622637"
-        target="_blank"
-        className="hover:text-clr3 transition"
-      >
-        <FaWhatsapp className="w-6 h-6" />
-      </a>
+              <div className="flex flex-col gap-3">
+                <span className="text-[9px] tracking-[0.35em] uppercase text-clr2/30 font-medium">
+                  Contato
+                </span>
+                <div className="flex gap-5">
+                  <a href="mailto:torodandigital@gmail.com" className="text-clr2/60 hover:text-clr3 transition-colors" aria-label="Email">
+                    <Mail className="w-4 h-4" />
+                  </a>
+                  <a href="https://wa.me/5512981622637" target="_blank" className="text-clr2/60 hover:text-clr3 transition-colors" aria-label="WhatsApp">
+                    <FaWhatsapp className="w-4 h-4" />
+                  </a>
+                  <a href="https://instagram.com/torodan.digital" className="text-clr2/60 hover:text-clr3 transition-colors" target="_blank" aria-label="Instagram">
+                    <Instagram className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
 
-      <a
-        href="https://instagram.com/torodan.digital"
-        className="hover:text-clr3 transition"
-        target="_blank"
-      >
-        <Instagram className="w-6 h-6" />
-      </a>
-    </div>
-  </div>
-
-  <div className="h-px my-8 bg-clr2/40 max-w-7xl mx-auto"></div>
-
-  <p className="text-center text-xs mt-6 opacity-70">
-    © {new Date().getFullYear()} Torodan. Todos os direitos reservados.
-  </p>
-</footer>
-
+          <p className="text-[10px] mt-8 text-clr2/25 font-light tracking-wide">
+            © {new Date().getFullYear()} Torodan. Todos os direitos reservados.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }

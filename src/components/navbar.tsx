@@ -3,10 +3,18 @@
 import Image from "next/image";
 import logo from "../../public/logo.png";
 import { Button } from "./ui/button";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 
 function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   useEffect(() => {
     const links = document.querySelectorAll('a[href^="#"]');
     links.forEach((link) => {
@@ -15,41 +23,53 @@ function Navbar() {
         const targetId = link.getAttribute("href")?.substring(1);
         const target = document.getElementById(targetId!);
         if (target) {
-          window.scrollTo({
-            top: target.offsetTop - 80,
-            behavior: "smooth",
-          });
+          window.scrollTo({ top: target.offsetTop - 80, behavior: "smooth" });
         }
       });
     });
   }, []);
-  
+
   return (
-    <header className="fixed top-0 left-0 w-full bg-clr2/90 backdrop-blur z-50 border-b border-clr1/10">
-      <div className="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
-        <Image src={logo} alt="image1" width={140} priority className="mt-3" />
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+        scrolled
+          ? "bg-clr2/95 backdrop-blur-md border-b border-clr1/8 py-3"
+          : "bg-transparent py-5"
+      }`}
+    >
+      <div className="max-w-screen-2xl mx-auto flex justify-between items-center px-6 md:px-16">
+        <Image
+          src={logo}
+          alt="Torodan"
+          width={130}
+          priority
+          className="mt-1 opacity-90 hover:opacity-100 transition-opacity"
+        />
 
-        <nav className="hidden md:flex gap-8 text-sm font-medium">
-          <a href="#servicos" className="hover:text-clr3 transition">
-            Serviços
-          </a>
-          <a href="#etapas" className="hover:text-clr3 transition">
-            Etapas
-          </a>
-          <a href="#sobre" className="hover:text-clr3 transition">
-            Como Trabalhamos
-          </a>
-
-          <a href="#contato" className="hover:text-clr3 transition">
-            Contato
-          </a>
+        <nav className="hidden md:flex gap-10 text-xs font-medium tracking-widest uppercase">
+          {[
+            { label: "Serviços", href: "#servicos" },
+            { label: "Etapas", href: "#etapas" },
+            { label: "Como Trabalhamos", href: "#sobre" },
+            { label: "Contato", href: "#contato" },
+          ].map(({ label, href }) => (
+            <a
+              key={href}
+              href={href}
+              className="text-clr1/50 hover:text-clr1 transition-colors duration-200 relative group"
+            >
+              {label}
+              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-clr3 group-hover:w-full transition-all duration-300" />
+            </a>
+          ))}
         </nav>
-        <Button className="bg-clr3 hover:bg-clr1 text-clr2 transition-colors cursor-pointer">
-          <a href="https://wa.me/5512981622637" target="_blank">
+
+        <a href="https://wa.me/5512981622637" target="_blank">
+          <Button className="bg-clr3 hover:bg-clr1 text-clr2 transition-all duration-300 cursor-pointer tracking-[0.08em] text-xs font-medium px-6 py-2.5 rounded-full gap-2.5">
             Fale Conosco
-          </a>
-            <FaWhatsapp />
-        </Button>
+            <FaWhatsapp className="w-3.5 h-3.5" />
+          </Button>
+        </a>
       </div>
     </header>
   );

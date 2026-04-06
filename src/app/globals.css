@@ -3,9 +3,23 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@font-face {
+  font-family: "dmsans";
+  src: url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+}
+
+@font-face {
+  font-family: "agr-reg";
+  src: url("../../public/fonts/agr-reg.otf");
+}
+
+
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --font-dmsans: "dmsans";
+  --font-agr-reg: "agr-reg";
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
