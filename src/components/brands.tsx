@@ -15,8 +15,16 @@ const brands = [
   { src: brand1, alt: "Estudio Masca", href: "https://estudiomasca.com" },
   { src: brand2, alt: "Ally Ribeiro", href: "https://allyribeiro.com/" },
   { src: brand3, alt: "Nicole Valente", href: "https://nicolevalente.com.br/" },
-  { src: brand4, alt: "Viggiani Arquitetura", href: "https://viggianiarquitetura.com/" },
-  { src: brand5, alt: "Ar Livre Editora", href: "https://arlivreeditora.com.br/" },
+  {
+    src: brand4,
+    alt: "Viggiani Arquitetura",
+    href: "https://viggianiarquitetura.com/",
+  },
+  {
+    src: brand5,
+    alt: "Ar Livre Editora",
+    href: "https://arlivreeditora.com.br/",
+  },
   { src: brand6, alt: "Art of Mala", href: "https://artofmala.netlify.app/" },
 ];
 
@@ -26,8 +34,9 @@ export default function Brands() {
       <div className="max-w-screen-2xl mx-auto px-6 md:px-16">
         <div className="flex flex-col md:flex-row md:items-center gap-10 md:gap-20">
           <div className="shrink-0">
-              <p className="text-[10px] tracking-[0.35em] uppercase text-clr3 font-semibold mb-4">
-Clientes & Parceiros              </p>
+            <p className="text-[10px] tracking-[0.35em] uppercase text-clr3 font-semibold mb-4">
+              Clientes & Parceiros{" "}
+            </p>
           </div>
 
           <div className="flex-1 overflow-hidden">
