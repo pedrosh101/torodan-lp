@@ -1,6 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { FaWhatsapp } from "react-icons/fa";
-import { Globe, Rocket, Target, Instagram, Mail, CheckCircle } from "lucide-react";
+import {
+  Globe,
+  Rocket,
+  Camera,
+  Instagram,
+  Mail,
+  CheckCircle,
+} from "lucide-react";
 import Navbar from "@/components/navbar";
 import Brands from "@/components/brands";
 import Image from "next/image";
@@ -38,11 +45,15 @@ export default function Home() {
             com{" "}
             <em className="not-italic text-clr3 relative inline-block">
               Marketing Digital
-              <span className="absolute bottom-1 left-0 w-full h-px bg-clr3/40" aria-hidden />
+              <span
+                className="absolute bottom-1 left-0 w-full h-px bg-clr3/40"
+                aria-hidden
+              />
             </em>
           </h1>
           <p className="max-w-xl text-clr1/60 text-lg leading-relaxed mb-14 font-light">
-            Aumente sua presença online, conquiste novos clientes e destaque sua marca.
+            Aumente sua presença online, conquiste novos clientes e destaque sua
+            marca.
           </p>
 
           <div className="flex items-center gap-6">
@@ -62,8 +73,6 @@ export default function Home() {
             </a>
           </div>
         </div>
-
-
       </section>
 
       {/* SERVICES */}
@@ -87,20 +96,20 @@ export default function Home() {
             {[
               {
                 icon: Globe,
-                title: "Websites Otimizados",
-                desc: "Desenvolvimento de sites rápidos, responsivos e prontos para converter visitantes em clientes.",
+                title: "Websites Estratégicos",
+                desc: "Desenvolvimento de sites rápidos, responsivos e pensados para apresentar sua marca e gerar oportunidades de negócio.",
                 num: "01",
-              },
-              {
-                icon: Target,
-                title: "Gestão de Tráfego",
-                desc: "Campanhas inteligentes no Google, Facebook e Instagram para gerar leads qualificados.",
-                num: "02",
               },
               {
                 icon: Rocket,
                 title: "Branding & Identidade",
                 desc: "Construímos marcas fortes e consistentes que conectam com seu público.",
+                num: "02",
+              },
+              {
+                icon: Camera,
+                title: "Conteúdo & Fotografia",
+                desc: "Produção fotográfica profissional para alimentar redes sociais, websites e materiais de divulgação.",
                 num: "03",
               },
             ].map(({ icon: Icon, title, desc, num }, i) => (
@@ -145,20 +154,36 @@ export default function Home() {
 
           <div className="grid md:grid-cols-4 gap-0 border border-clr1/10">
             {[
-              { title: "Diagnóstico", desc: "Entendemos o seu negócio, público e desafios." },
-              { title: "Estratégia", desc: "Planejamos as melhores ações para alcançar resultados." },
-              { title: "Execução", desc: "Colocamos em prática as campanhas e acompanhamos de perto." },
-              { title: "Resultados", desc: "Analisamos e otimizamos continuamente para crescer ainda mais." },
-            ].map((step, i) => (
+{
+title: "Imersão",
+desc: "Conhecemos sua empresa, seus objetivos, público e diferenciais para construir uma comunicação alinhada ao seu negócio.",
+},
+{
+title: "Planejamento",
+desc: "Definimos a estratégia visual e digital, organizando identidade, conteúdo, website e presença nas redes sociais.",
+},
+{
+title: "Produção",
+desc: "Desenvolvemos a identidade visual, realizamos as fotografias e criamos os materiais que darão vida à sua marca.",
+},
+{
+title: "Lançamento",
+desc: "Publicamos o website, estruturamos os canais digitais e entregamos uma presença profissional pronta para crescer.",
+},
+].map((step, i) => (
               <div
                 key={i}
                 className="relative p-10 border-r border-clr1/10 last:border-r-0 group hover:bg-clr1/5 transition-colors duration-300 cursor-default"
               >
-                <span className="block text-[3.5rem] font-extrabold text-clr3/20 leading-none mb-8 group-hover:text-clr3/40 transition-colors duration-300">
+                <span className="block text-[3.5rem] font-extrabold text-clr3/20 leading-none mb-8 group-hover:text-clr3 transition-colors duration-300">
                   0{i + 1}
                 </span>
-                <h4 className="font-semibold text-base mb-3 tracking-[-0.01em]">{step.title}</h4>
-                <p className="text-clr1/50 text-sm leading-relaxed font-light">{step.desc}</p>
+                <h4 className="font-semibold text-base mb-3 tracking-[-0.01em]">
+                  {step.title}
+                </h4>
+                <p className="text-clr1/70 text-sm leading-relaxed font-light">
+                  {step.desc}
+                </p>
               </div>
             ))}
           </div>
@@ -171,21 +196,25 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-20 items-center">
             <div>
               <p className="text-[10px] tracking-[0.35em] uppercase text-clr3 font-semibold mb-4">
-                Nossa abordagem
+                Nosso diferencial
               </p>
               <h2 className="text-4xl md:text-5xl font-bold leading-tight tracking-[-0.02em] mb-14">
-                Como Trabalhamos
+                Construímos marcas com propósito
               </h2>
 
               <div className="space-y-7">
                 {[
-                  "Estratégias sob medida para cada negócio.",
-                  "Foco total em performance e resultados reais.",
-                  "Transparência e comunicação constante.",
-                  "Acompanhamento técnico contínuo.",
-                  "Compromisso com prazos e qualidade.",
-                ].map((text, i) => (
-                  <div key={i} className="flex items-start gap-5 group cursor-default">
+"Cada projeto é desenvolvido de forma estratégica e exclusiva.",
+"Construímos marcas com identidade visual forte e consistente.",
+"Criamos experiências digitais que geram credibilidade e confiança.",
+"Produzimos conteúdo visual autêntico através da fotografia profissional.",
+"Valorizamos relações de longo prazo baseadas em transparência e excelência.",
+]
+.map((text, i) => (
+                  <div
+                    key={i}
+                    className="flex items-start gap-5 group cursor-default"
+                  >
                     <div className="shrink-0 w-5 h-5 mt-0.5">
                       <CheckCircle className="w-5 h-5 text-clr3" />
                     </div>
@@ -231,7 +260,8 @@ export default function Home() {
             seu negócio?
           </h2>
           <p className="text-clr2/70 text-lg mb-12 font-light leading-relaxed max-w-xl">
-            Entre em contato e descubra como a Torodan pode ajudar sua marca a crescer.
+            Entre em contato e descubra como a Torodan pode ajudar sua marca a
+            crescer.
           </p>
           <a href="https://wa.me/5512981622637" target="_blank">
             <Button
@@ -250,7 +280,9 @@ export default function Home() {
         <div className={`${W} pt-16 pb-10`}>
           <div className="flex flex-col md:flex-row justify-between items-start gap-10 pb-12 border-b border-clr2/10">
             <div>
-              <h4 className="text-base font-semibold tracking-[-0.01em]">Torodan</h4>
+              <h4 className="text-base font-semibold tracking-[-0.01em]">
+                Torodan
+              </h4>
               <p className="text-xs mt-2 text-clr2/40 font-light tracking-wide">
                 Transformando ideias em resultados.
               </p>
@@ -261,15 +293,17 @@ export default function Home() {
                 <span className="text-[9px] tracking-[0.35em] uppercase text-clr2/30 font-medium">
                   Navegação
                 </span>
-                {["Serviços", "Etapas", "Como Trabalhamos", "Contato"].map((item) => (
-                  <a
-                    key={item}
-                    href={`#${item.toLowerCase().replace(/\s/g, "")}`}
-                    className="text-clr2/60 hover:text-clr3 transition-colors text-xs font-light"
-                  >
-                    {item}
-                  </a>
-                ))}
+                {["Serviços", "Etapas", "Como Trabalhamos", "Contato"].map(
+                  (item) => (
+                    <a
+                      key={item}
+                      href={`#${item.toLowerCase().replace(/\s/g, "")}`}
+                      className="text-clr2/60 hover:text-clr3 transition-colors text-xs font-light"
+                    >
+                      {item}
+                    </a>
+                  ),
+                )}
               </div>
 
               <div className="flex flex-col gap-3">
@@ -277,13 +311,27 @@ export default function Home() {
                   Contato
                 </span>
                 <div className="flex gap-5">
-                  <a href="mailto:torodandigital@gmail.com" className="text-clr2/60 hover:text-clr3 transition-colors" aria-label="Email">
+                  <a
+                    href="mailto:torodandigital@gmail.com"
+                    className="text-clr2/60 hover:text-clr3 transition-colors"
+                    aria-label="Email"
+                  >
                     <Mail className="w-4 h-4" />
                   </a>
-                  <a href="https://wa.me/5512981622637" target="_blank" className="text-clr2/60 hover:text-clr3 transition-colors" aria-label="WhatsApp">
+                  <a
+                    href="https://wa.me/5512981622637"
+                    target="_blank"
+                    className="text-clr2/60 hover:text-clr3 transition-colors"
+                    aria-label="WhatsApp"
+                  >
                     <FaWhatsapp className="w-4 h-4" />
                   </a>
-                  <a href="https://instagram.com/torodan.digital" className="text-clr2/60 hover:text-clr3 transition-colors" target="_blank" aria-label="Instagram">
+                  <a
+                    href="https://instagram.com/torodan.digital"
+                    className="text-clr2/60 hover:text-clr3 transition-colors"
+                    target="_blank"
+                    aria-label="Instagram"
+                  >
                     <Instagram className="w-4 h-4" />
                   </a>
                 </div>
