@@ -30,7 +30,7 @@ const brands = [
 
 export default function Brands() {
   return (
-    <section className="py-20 bg-clr2 border-t border-clr1/8">
+    <section className="pb-20 pt-6 bg-clr2 ">
       <div className="max-w-screen-2xl mx-auto px-6 md:px-16">
         <div className="flex flex-col md:flex-row md:items-center gap-10 md:gap-20">
           <div className="shrink-0">
@@ -51,7 +51,7 @@ export default function Brands() {
                       href={brand.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0"
+                      className="flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity duration-300 grayscale-0"
                     >
                       <Image
                         src={brand.src}
