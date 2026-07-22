@@ -136,7 +136,7 @@ function Footer() {
         </div>
 
         <p className="text-[10px] mt-8 text-center md:text-left text-clr2/60 font-light tracking-wide">
-          © {new Date().getFullYear()} {footerText.copyright}
+           {footerText.copyright}
         </p>
       </div>
     </footer>
