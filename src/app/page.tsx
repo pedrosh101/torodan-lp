@@ -1,12 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { FaWhatsapp } from "react-icons/fa";
-import {
-  Globe,
-  Camera,
-  Share2,
-  CheckCircle,
-  ChevronDown,
-} from "lucide-react";
+import { Globe, Camera, Share2, CheckCircle, ChevronDown } from "lucide-react";
 import Navbar from "@/components/navbar";
 import Brands from "@/components/brands";
 import Image from "next/image";
@@ -42,7 +36,7 @@ export default function Home() {
           <h1 className="text-5xl md:text-[5.5rem] font-extrabold leading-[1.02] tracking-[-0.03em] mb-6">
             O{"  "}
             <em className="not-italic text-clr3 relative inline-block">
-              time do marketing
+              time de marketing
             </em>
             <br />
             da sua empresa
@@ -72,47 +66,47 @@ export default function Home() {
       </section>
 
       {/* SERVICES */}
-<section id="servicos" className="lg:py-32 py-18 bg-clr1">
-  <div className={W}>
-    <div className="flex flex-col md:flex-row md:items-end justify-between lg:mb-20 mb-10 gap-6">
-      <div>
-        <p className="text-[10px] tracking-[0.35em] uppercase text-clr3 font-semibold mb-4">
-          O que fazemos
-        </p>
-        <h2 className="text-4xl md:text-5xl font-bold text-clr2 leading-tight tracking-[-0.02em]">
-          Soluções para seu negócio
-        </h2>
-      </div>
+      <section id="servicos" className="lg:py-32 py-18 bg-clr1">
+        <div className={W}>
+          <div className="flex flex-col md:flex-row md:items-end justify-between lg:mb-20 mb-10 gap-6">
+            <div>
+              <p className="text-[10px] tracking-[0.35em] uppercase text-clr3 font-semibold mb-4">
+                O que fazemos
+              </p>
+              <h2 className="text-4xl md:text-5xl font-bold text-clr2 leading-tight tracking-[-0.02em]">
+                Soluções para seu negócio
+              </h2>
+            </div>
 
-      <p className="text-clr2/60 max-w-sm text-sm leading-relaxed font-light">
-        Soluções integradas para cada etapa da sua presença digital.
-      </p>
-    </div>
+            <p className="text-clr2/60 max-w-sm text-sm leading-relaxed font-light">
+              Soluções integradas para cada etapa da sua presença digital.
+            </p>
+          </div>
 
-    <div className="grid gap-4 md:gap-px md:grid-cols-3 md:bg-clr2/10">
-      {[
-        {
-          icon: Share2,
-          title: "Gestão de Presença Digital",
-          desc: "Planejamento, produção de conteúdo e gestão das redes sociais para manter sua empresa ativa, profissional e relevante.",
-          num: "01",
-        },
-        {
-          icon: Camera,
-          title: "Fotografia Profissional",
-          desc: "Fotografia profissional e criação de conteúdo para destacar sua marca em todos os canais.",
-          num: "02",
-        },
-        {
-          icon: Globe,
-          title: "Websites Estratégicos",
-          desc: "Sites modernos, rápidos e preparados para apresentar sua empresa e gerar novas oportunidades de negócio.",
-          num: "03",
-        },
-      ].map(({ icon: Icon, title, desc, num }, i) => (
-        <div
-          key={i}
-          className="
+          <div className="grid gap-4 md:gap-px md:grid-cols-3 md:bg-clr2/10">
+            {[
+              {
+                icon: Globe,
+                title: "Websites Estratégicos",
+                desc: "Sites modernos, rápidos e preparados para apresentar sua empresa e gerar novas oportunidades de negócio.",
+                num: "01",
+              },
+              {
+                icon: Camera,
+                title: "Fotografia Profissional",
+                desc: "Fotografia profissional e criação de conteúdo para destacar sua marca em todos os canais.",
+                num: "02",
+              },
+              {
+                icon: Share2,
+                title: "Gestão de Presença Digital",
+                desc: "Planejamento, produção de conteúdo e gestão das redes sociais para manter sua empresa ativa, profissional e relevante.",
+                num: "03",
+              },
+            ].map(({ icon: Icon, title, desc, num }, i) => (
+              <div
+                key={i}
+                className="
             bg-clr1
             border border-clr2/10
             rounded-xl
@@ -125,33 +119,33 @@ export default function Home() {
             transition-all duration-500
             cursor-default
           "
-        >
-          <div className="flex items-start justify-between">
-            <Icon className="w-8 h-8 text-clr3 md:group-hover:text-clr2 transition-colors duration-500" />
+              >
+                <div className="flex items-start justify-between">
+                  <Icon className="w-8 h-8 text-clr3 md:group-hover:text-clr2 transition-colors duration-500" />
 
-            <span className="text-[10px] tracking-[0.3em] text-clr2/40 md:text-clr2/30 md:group-hover:text-clr2/60 font-medium transition-colors duration-500">
-              {num}
-            </span>
-          </div>
+                  <span className="text-[10px] tracking-[0.3em] text-clr2/40 md:text-clr2/30 md:group-hover:text-clr2/60 font-medium transition-colors duration-500">
+                    {num}
+                  </span>
+                </div>
 
-          <div>
-            <h4 className="text-xl font-semibold mb-3 text-clr2 leading-snug tracking-[-0.01em]">
-              {title}
-            </h4>
+                <div>
+                  <h4 className="text-xl font-semibold mb-3 text-clr2 leading-snug tracking-[-0.01em]">
+                    {title}
+                  </h4>
 
-            <p className="text-clr2/70 md:text-clr2/60 md:group-hover:text-clr2/80 leading-relaxed text-sm transition-colors duration-500">
-              {desc}
-            </p>
-          </div>
+                  <p className="text-clr2/70 md:text-clr2/60 md:group-hover:text-clr2/80 leading-relaxed text-sm transition-colors duration-500">
+                    {desc}
+                  </p>
+                </div>
 
-          <div className="mt-auto">
-            <div className="w-16 md:w-8 h-px bg-clr3 md:group-hover:bg-clr2 md:group-hover:w-16 transition-all duration-500" />
+                <div className="mt-auto">
+                  <div className="w-16 md:w-8 h-px bg-clr3 md:group-hover:bg-clr2 md:group-hover:w-16 transition-all duration-500" />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* HOW WE WORK */}
       <section id="sobre" className="lg:py-32 py-18 bg-clr2">

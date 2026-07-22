@@ -6,9 +6,29 @@ import { Button } from "./ui/button";
 import { useEffect, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const isEnglish = pathname.startsWith("/en");
+
+  const navItems = isEnglish
+    ? [
+        { label: "Features", href: "#features" },
+        { label: "Review", href: "#review" },
+        { label: "About", href: "#about" },
+        { label: "FAQ", href: "#faq" },
+      ]
+    : [
+        { label: "Serviços", href: "#servicos" },
+        { label: "Sobre", href: "#sobre" },
+        { label: "Preços", href: "#precos" },
+        { label: "Dúvidas", href: "#duvidas" },
+        { label: "Contato", href: "#contato" },
+      ];
+
+  const ctaLabel = isEnglish ? "Book a Free Review" : "Fale Conosco";
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -39,7 +59,8 @@ function Navbar() {
       }`}
     >
       <div className="max-w-screen-2xl mx-auto flex justify-between items-center px-6 md:px-16">
-        <Link href="/">
+        <Link href={isEnglish ? "/en" : "/"}>
+          {" "}
           <Image
             src={logo}
             alt="Torodan"
@@ -50,13 +71,7 @@ function Navbar() {
         </Link>
 
         <nav className="hidden md:flex gap-10 text-xs font-medium tracking-widest uppercase">
-          {[
-            { label: "Serviços", href: "#servicos" },
-            { label: "Sobre", href: "#sobre" },
-            { label: "Preços", href: "#precos" },
-            { label: "Dúvidas", href: "#duvidas" },
-            { label: "Contato", href: "#contato" },
-          ].map(({ label, href }) => (
+          {navItems.map(({ label, href }) => (
             <a
               key={href}
               href={href}
@@ -70,7 +85,7 @@ function Navbar() {
 
         <a href="https://wa.me/5538998162313" target="_blank">
           <Button className="bg-clr3 hover:bg-clr1 text-clr2 transition-all duration-300 cursor-pointer tracking-[0.08em] text-xs font-medium px-6 py-2.5 rounded-full gap-2.5">
-            Fale Conosco
+            {ctaLabel}
             <FaWhatsapp className="w-3.5 h-3.5" />
           </Button>
         </a>
