@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Torodan - Marketing Digital",
+  title: "Torodan | Marketing Digital",
   description: "Transformando ideias em resultados.",
 };
 

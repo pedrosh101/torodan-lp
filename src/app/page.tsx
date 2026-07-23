@@ -4,7 +4,7 @@ import { Globe, Camera, Share2, CheckCircle, ChevronDown } from "lucide-react";
 import Navbar from "@/components/navbar";
 import Brands from "@/components/brands";
 import Image from "next/image";
-import computer from "../../public/computer.jpg";
+import computer from "../../public/images/card.webp";
 import Footer from "@/components/footer";
 
 const W = "max-w-screen-2xl mx-auto px-6 md:px-16";
@@ -188,7 +188,7 @@ export default function Home() {
               <Image
                 src={computer}
                 alt="Computador"
-                className="rounded-2xl shadow-2xl object-cover w-full aspect-4/3"
+                className="rounded-xl shadow-2xl object-cover w-full aspect-4/3"
               />
             </div>
           </div>

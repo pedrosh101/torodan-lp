@@ -6,22 +6,22 @@ import {
   Zap,
   Globe,
   ChevronDown,
-  Home as HomeIcon,
 } from "lucide-react";
+import Image from "next/image";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
 const W = "max-w-screen-2xl mx-auto px-6 md:px-16";
 
 const WHATSAPP_MSG = encodeURIComponent(
-  "Hi! I'd like to book a Free Website Review.",
+  "Olá! Gostaria de agendar uma Avaliação Gratuita do meu Site.",
 );
 const WHATSAPP_LINK = `https://wa.me/5512981622637?text=${WHATSAPP_MSG}`;
 
 export const metadata = {
   title: "Torodan | Web Design",
   description:
-    "Modern, conversion-focused websites for professional service businesses. Book a free website review.",
+    "Sites modernos e focados em conversão para negócios de serviços profissionais. Agende uma avaliação gratuita do seu site.",
 };
 
 export default function WebsiteReview() {
@@ -29,74 +29,68 @@ export default function WebsiteReview() {
     <div className="min-h-screen flex flex-col font-sans bg-clr2 text-clr1 scroll-smooth">
       <Navbar />
 
-      {/* HERO */}
-      <section className="relative flex flex-col items-start justify-end 2xl:min-h-screen pb-24 pt-40 overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-[0.035]"
-          style={{
-            backgroundImage:
-              "linear-gradient(var(--clr1) 1px, transparent 1px), linear-gradient(90deg, var(--clr1) 1px, transparent 1px)",
-            backgroundSize: "64px 64px",
-          }}
-        />
+      <section className="relative flex items-center min-h-[80vh]  pt-28 pb-16 overflow-hidden bg-clr1">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/websites.webp"
+            alt=""
+            fill
+            priority
+            className="object-cover object-right"
+          />
 
-        <span className="absolute top-40 right-6 md:right-16 text-[10px] tracking-[0.3em] uppercase text-clr1/70 font-medium hidden lg:flex">
-          Professional Websites
-        </span>
+          <div className="absolute inset-0 bg-clr2/85" />
+          <div className="absolute inset-0 bg-linear-to-r from-clr2/80 via-clr2/10 to-clr2/10" />
+        </div>
 
-        <div className={`relative w-full ${W} lg:mt-28 2xl:mt-0`}>
-          <p className="text-[11px] tracking-[0.35em] uppercase text-clr3 font-semibold mb-8">
-            Torodan — Modern Websites
+        <div className={`relative w-full ${W}`}>
+          <p className="text-[11px] tracking-[0.35em] uppercase text-clr3 font-semibold mb-6">
+            Torodan — Sites Modernos
           </p>
-          <h1 className="text-5xl md:text-[5.5rem] font-extrabold leading-[1.02] tracking-[-0.03em] mb-6">
-            Websites that help
-            <br /> businesses{" "}
-            <em className="not-italic text-clr3 relative inline-block">
-              build trust
-            </em>
-            <br />
-            and win more clients.
+          <h1 className="text-4xl md:text-6xl font-extrabold leading-[1.05] tracking-[-0.03em] mb-5 max-w-3xl">
+            Seu próximo cliente pode estar procurando pela sua empresa{" "}
+            <span className="text-clr3">agora.</span>
           </h1>
-          <p className="max-w-xl text-clr1/70 text-lg leading-relaxed mb-12 font-light">
-            We help professional businesses stand out online with modern design,
-            exceptional user experience, and websites built to convert.
+          <p className="max-w-lg text-clr1/70 text-base md:text-lg leading-relaxed mb-9 font-light">
+            Mais credibilidade, mais confiança e uma presença online que
+            trabalha por você 24 horas por dia.
           </p>
 
           <div className="flex items-center gap-6">
             <a href={WHATSAPP_LINK} target="_blank">
               <Button
                 size="lg"
-                className="bg-clr3 hover:bg-clr1 text-clr2 transition-all duration-300 hover:scale-105 cursor-pointer tracking-[0.08em] font-medium px-10 py-6 rounded-full"
+                className="bg-clr3 hover:bg-clr1 hover:text-clr2 border border-transparent hover:border-clr1/20 text-clr2 transition-all duration-300 hover:scale-105 cursor-pointer tracking-[0.08em] font-medium px-10 py-6 rounded-full"
               >
-                Let's Talk
+                Vamos Conversar
               </Button>
             </a>
             <a
-              href="#services"
-              className="text-sm text-clr1/70 hover:text-clr1 transition-colors tracking-widest uppercase font-medium "
+              href="#servicos"
+              className="text-sm text-clr1/70 hover:text-clr1 transition-colors tracking-widest uppercase font-medium"
             >
-              How We Work
+              Como Trabalhamos
             </a>
           </div>
         </div>
       </section>
 
-      <section id="features" className="lg:py-32 py-18 bg-clr1">
+      <section className="lg:py-32 py-18 bg-clr1">
         <div className={W}>
           <div className="flex flex-col md:flex-row md:items-end justify-between lg:mb-20 mb-10 gap-6">
             <div>
               <p className="text-[10px] tracking-[0.35em] uppercase text-clr3 font-semibold mb-4">
-                WHAT MAKES A GREAT WEBSITE
+                O QUE UM SITE PRECISA ENTREGAR
               </p>
               <h2 className="text-4xl md:text-5xl font-bold text-clr2 leading-tight tracking-[-0.02em]">
-                Every great website <br />
-                should do four things.
+                Um ótimo site <br /> deve fazer quatro coisas.
               </h2>
             </div>
 
             <p className="text-clr2/60 max-w-sm text-sm leading-relaxed font-light">
-              Every decision we make is focused on improving credibility, user
-              experience, and conversions.
+              Todo projeto da Torodan é pensado para ajudar sua empresa a
+              conquistar clientes, transmitir confiança e crescer no ambiente
+              digital.
             </p>
           </div>
 
@@ -104,26 +98,26 @@ export default function WebsiteReview() {
             {[
               {
                 icon: ShieldCheck,
-                title: "Build Trust",
-                desc: "Professional design that reflects your expertise.",
+                title: "Gerar Confiança",
+                desc: "A primeira impressão faz diferença. Um design profissional mostra que sua empresa é séria e preparada para atender novos clientes.",
                 num: "01",
               },
               {
                 icon: MousePointerClick,
-                title: "Convert Visitors",
-                desc: "Guide visitors to book an appointment or get in touch.",
+                title: "Converter Visitantes",
+                desc: "Seu cliente encontra rapidamente o que procura e consegue falar com sua empresa pelo WhatsApp, telefone ou formulário.",
                 num: "02",
               },
               {
                 icon: Zap,
-                title: "Fast Performance",
-                desc: "Optimized for speed on desktop and mobile.",
+                title: "Performance Rápida",
+                desc: "Um site lento afasta visitantes. Desenvolvemos páginas rápidas para oferecer uma excelente experiência em qualquer dispositivo.",
                 num: "03",
               },
               {
                 icon: Globe,
-                title: "SEO Ready",
-                desc: "Built with clean code and best practices.",
+                title: "Ser encontrado no Google",
+                desc: "Aplicamos boas práticas de SEO para aumentar as chances da sua empresa aparecer quando alguém procurar pelos seus serviços.",
                 num: "04",
               },
             ].map(({ icon: Icon, title, desc, num }, i) => (
@@ -170,66 +164,66 @@ export default function WebsiteReview() {
         </div>
       </section>
 
-      {/* WEBSITE REVIEW */}
-      <section id="review" className="py-32 bg-clr2 text-clr1">
+      {/* COMO FUNCIONA */}
+      <section className="lg:py-32 py-18 bg-clr2 text-clr1">
         <div className={W}>
           <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-20 items-start">
-            {/* LEFT */}
+            {/* ESQUERDA */}
             <div className="md:sticky top-28">
               <p className="text-[10px] tracking-[0.35em] uppercase text-clr3 font-semibold mb-5">
-                Free Website Review
+                COMO FUNCIONA
               </p>
 
               <h2 className="text-4xl md:text-5xl font-bold tracking-[-0.02em] leading-tight mb-6">
-                What we evaluate during your website review.
+                Cuidamos de todo o processo para você.
               </h2>
 
               <p className="text-clr1/65 leading-relaxed max-w-md">
-                Every review focuses on the areas that have the biggest impact
-                on how people perceive your business and whether they decide to
-                contact you.
+                Desde o primeiro contato até a publicação do site, acompanhamos
+                cada etapa para que você tenha uma experiência simples,
+                transparente e sem complicações.
               </p>
 
               <div className="mt-10 inline-flex items-center gap-3 rounded-full border border-clr1/10 px-5 py-3">
                 <span className="w-2 h-2 rounded-full bg-clr3" />
                 <span className="text-sm text-clr1/70">
-                  Free · 30 minutes · No obligation
+                  Acompanhamento do início ao fim
                 </span>
               </div>
             </div>
 
-            {/* RIGHT */}
+            {/* DIREITA */}
             <div className="space-y-5">
               {[
                 {
                   number: "01",
-                  title: "First Impression",
-                  desc: "Does your website immediately communicate professionalism and build trust?",
+                  title: "Conhecemos sua empresa",
+                  desc: "Conversamos para entender seu negócio, seus objetivos e o que você espera do novo site.",
                 },
                 {
                   number: "02",
-                  title: "Mobile Experience",
-                  desc: "We review usability across phones and tablets, where most visitors arrive.",
+                  title: "Planejamos a estrutura",
+                  desc: "Organizamos as páginas, conteúdos e definimos a melhor forma de apresentar sua empresa.",
                 },
                 {
                   number: "03",
-                  title: "Performance",
-                  desc: "Loading speed, responsiveness and overall browsing experience.",
+                  title: "Desenvolvemos o projeto",
+                  desc: "Criamos um site moderno, rápido e totalmente responsivo.",
                 },
                 {
                   number: "04",
-                  title: "User Journey",
-                  desc: "Is it clear how someone books an appointment or contacts your business?",
+                  title: "Você acompanha tudo",
+                  desc: "Apresentamos o projeto, realizamos ajustes e refinamos cada detalhe.",
                 },
                 {
                   number: "05",
-                  title: "Trust Signals",
-                  desc: "Reviews, testimonials, credentials and other elements that increase credibility.",
+                  title: "Publicamos o site",
+                  desc: "Configuramos domínio, hospedagem e colocamos seu site no ar.",
                 },
                 {
                   number: "06",
-                  title: "SEO Foundations",
-                  desc: "Technical fundamentals that help potential clients discover your business online.",
+                  title: "Suporte após a entrega",
+                  desc: "Se precisar, continuamos disponíveis para manutenção e novas melhorias.",
                 },
               ].map((item) => (
                 <div
@@ -258,67 +252,62 @@ export default function WebsiteReview() {
         </div>
       </section>
 
-      {/* ABOUT */}
-      <section id="about" className="py-32 bg-clr1">
+      {/* SOBRE */}
+      <section className="lg:py-32 py-18 bg-clr1">
         <div
           className={`${W} grid lg:grid-cols-[0.9fr_1.1fr] gap-20 items-start`}
         >
-          {/* LEFT */}
+          {/* ESQUERDA */}
           <div>
             <p className="text-[10px] tracking-[0.35em] uppercase text-clr3 font-semibold mb-5">
-              About Torodan
+              Por que escolher a Torodan?
             </p>
 
             <h2 className="text-4xl md:text-5xl font-bold leading-tight tracking-[-0.02em] mb-8 text-clr2">
-              A personal approach to modern web design.
+              Não fazemos apenas páginas bonitas.
             </h2>
 
-            <div className="space-y-6 text-clr2/70 leading-relaxed">
+            <div className="space-y-6 text-clr2/80 leading-relaxed">
               <p>
-                Hi, I'm Pedro, a web designer and frontend developer passionate
-                about creating websites that help businesses build credibility
-                and grow online.
+                Criamos sites pensando em quem realmente importa: seus futuros
+                clientes.
               </p>
 
               <p>
-                Rather than relying on generic templates, every project is
-                designed with your business goals, audience, and user experience
-                in mind.
+                Cada projeto é desenvolvido para transmitir confiança, carregar
+                rapidamente e facilitar o contato com sua empresa.
               </p>
 
               <p>
-                My goal is simple: create websites that not only look modern,
-                but also make it easier for people to trust your business and
-                take action.
+                Utilizamos tecnologias modernas, priorizamos desempenho e
+                seguimos boas práticas para que seu site tenha uma excelente
+                experiência em computadores e celulares.
               </p>
-            </div>
-
-            <div className="mt-10 flex items-center gap-4">
-              <div className="h-px w-20 bg-clr3" />
-              <span className="text-sm text-clr2/60">
-                Working with businesses worldwide
-              </span>
+              <p>Nosso objetivo é simples:</p>
+              <p className="font-bold text-clr2/90">
+                fazer seu site trabalhar para o seu negócio.
+              </p>
             </div>
           </div>
 
-          {/* RIGHT */}
+          {/* DIREITA */}
           <div className="grid md:grid-cols-2 gap-5 text-clr2">
             {[
               {
-                title: "Custom Design",
-                desc: "Every website is designed specifically for your business instead of relying on generic templates.",
+                title: "Design Personalizado",
+                desc: "Cada site é desenhado especificamente para o seu negócio, em vez de depender de templates genéricos.",
               },
               {
-                title: "Performance First",
-                desc: "Fast loading times, responsive layouts, and clean development from the ground up.",
+                title: "Performance em Primeiro Lugar",
+                desc: "Carregamento rápido, layouts responsivos e desenvolvimento limpo desde a base.",
               },
               {
-                title: "Conversion Focus",
-                desc: "Every page is structured to guide visitors toward meaningful actions and new enquiries.",
+                title: "Foco em Conversão",
+                desc: "Cada página é estruturada para guiar visitantes até ações relevantes e novos contatos.",
               },
               {
-                title: "Direct Collaboration",
-                desc: "You'll work directly with the person designing and developing your website from start to finish.",
+                title: "Colaboração Direta",
+                desc: "Você trabalha diretamente com a pessoa que projeta e desenvolve seu site, do início ao fim.",
               },
             ].map((item) => (
               <div
@@ -337,42 +326,50 @@ export default function WebsiteReview() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="py-28 bg-clr2">
+      <section className="lg:py-32 py-18 bg-clr2">
         <div className={W}>
           <div className="mb-12">
             <p className="text-[10px] tracking-[0.35em] uppercase text-clr3 font-semibold mb-4">
-              FAQ
+              PERGUNTAS FREQUENTES
             </p>
             <h2 className="text-4xl md:text-5xl font-bold text-clr1 leading-tight tracking-[-0.02em]">
-              Frequently Asked Questions
+              Perguntas Frequentes
             </h2>
           </div>
 
           <div className="border-t border-clr2/15">
             {[
               {
-                q: "Can you redesign my existing website?",
-                a: "Absolutely. Most of my projects involve redesigning existing websites, improving their design, performance, and usability while preserving what already works well.",
+                q: "Quanto custa um site?",
+                a: "O valor depende do tipo de projeto, quantidade de páginas e funcionalidades desejadas. Antes de qualquer orçamento, entendemos suas necessidades para apresentar uma proposta personalizada e transparente.",
               },
               {
-                q: "What makes your approach different?",
-                a: "I don't believe in one-size-fits-all websites. Every project starts by understanding your business, your audience, and your goals. The result is a custom website designed to build trust, improve user experience, and support long-term growth.",
+                q: "Quanto tempo leva para o site ficar pronto?",
+                a: "Em média, entre 2 e 4 semanas. Projetos maiores ou com funcionalidades específicas podem exigir um prazo maior, que sempre é informado antes do início do desenvolvimento.",
               },
               {
-                q: "Will I work directly with you?",
-                a: "Yes. From our first conversation to the final launch, you'll work directly with me. There are no account managers or intermediaries—just clear communication and a collaborative process.",
+                q: "Preciso fornecer todos os textos e imagens?",
+                a: "Não. Se você já tiver esse material, utilizamos no projeto. Caso contrário, orientamos na criação dos conteúdos e, quando necessário, também oferecemos serviços de fotografia e produção de imagens.",
               },
               {
-                q: "What happens during the free website review?",
-                a: "In a 30-minute call, we'll review your website together and identify opportunities to improve design, user experience, performance, and conversion. You'll leave with practical recommendations you can apply, whether or not we work together.",
+                q: "Meu site vai funcionar no celular?",
+                a: "Sim. Todos os sites são desenvolvidos para oferecer uma ótima experiência em computadores, tablets e smartphones.",
               },
               {
-                q: "Is there any obligation after the review?",
-                a: "None at all. The review is intended to provide valuable insights. If you decide you'd like help implementing those improvements, we can discuss the next steps—but the decision is entirely yours.",
+                q: "Meu site aparece no Google?",
+                a: "Sim. Desenvolvemos todos os projetos seguindo boas práticas de SEO para facilitar a indexação e aumentar as chances da sua empresa ser encontrada nas pesquisas.",
               },
               {
-                q: "Do you work with businesses outside Brazil?",
-                a: "Yes. I work remotely with clients around the world and communicate in English throughout the entire project. Distance isn't a barrier to creating a successful website together.",
+                q: "Depois de pronto, posso fazer alterações?",
+                a: "Sim. Dependendo do projeto, você poderá editar algumas informações por conta própria ou contar conosco para futuras atualizações e manutenção.",
+              },
+              {
+                q: "Preciso pagar alguma mensalidade?",
+                a: "O desenvolvimento do site é um investimento único. Além disso, existem custos anuais ou mensais relacionados ao domínio, hospedagem e, caso deseje, planos de manutenção.",
+              },
+              {
+                q: "Vocês oferecem suporte após a entrega?",
+                a: "Sim. Continuamos disponíveis para suporte, manutenção e melhorias futuras, garantindo que seu site permaneça atualizado e funcionando corretamente.",
               },
             ].map(({ q, a }, i) => (
               <details key={i} className="group border-b border-clr1/15 py-6">
@@ -382,7 +379,7 @@ export default function WebsiteReview() {
                   </span>
                   <ChevronDown className="w-5 h-5 text-clr3 shrink-0 transition-transform duration-300 group-open:rotate-180" />
                 </summary>
-                <p className="text-clr1/70 text-[15px] leading-relaxed font-light mt-4 max-w-2xl">
+                <p className="text-clr1/90 text-[15px] leading-relaxed font-light mt-4 max-w-2xl">
                   {a}
                 </p>
               </details>
@@ -403,21 +400,24 @@ export default function WebsiteReview() {
         />
         <div className={`relative ${W}`}>
           <p className="text-[10px] tracking-[0.35em] uppercase text-clr2/60 font-semibold mb-6">
-            LET'S START
+            VAMOS TIRAR SUA IDEIA DO PAPEL
           </p>
-          <h2 className="text-4xl md:text-6xl font-bold text-clr2 leading-[1.05] tracking-[-0.03em] mb-2">
-            Book your free <br />
-            website review.
+
+          <h2 className="text-4xl md:text-6xl font-bold text-clr2 leading-[1.05] tracking-[-0.03em] mb-4">
+            Vamos criar um site para
+            <br />o seu negócio?
           </h2>
-          <p className="text-clr2/70 text-lg my-6 font-light leading-relaxed max-w-xl">
-            Your website could be working harder for your business.
+
+          <p className="text-clr2/80 text-lg my-6 font-light leading-relaxed max-w-xl">
+            Conte um pouco sobre sua empresa e seus objetivos. Vamos indicar a
+            melhor solução e preparar uma proposta sem compromisso.
           </p>
           <a href={WHATSAPP_LINK} target="_blank">
             <Button
               size="lg"
               className="bg-clr2 text-clr3 hover:bg-clr1 hover:text-clr2 transition-all duration-300 hover:scale-105 px-10 py-6 font-semibold cursor-pointer tracking-[0.08em] rounded-full"
             >
-              Book a Free Website Review
+              Solicitar orçamento
               <FaWhatsapp className="w-5 h-5" />
             </Button>
           </a>

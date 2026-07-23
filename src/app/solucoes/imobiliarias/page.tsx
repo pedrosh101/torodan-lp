@@ -42,7 +42,7 @@ export default function Page() {
           <div
             className="lg:absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: "url('/images/imob.jpg')",
+              backgroundImage: "url('/images/imob.webp')",
             }}
           />
         </div>
