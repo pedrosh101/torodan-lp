@@ -19,11 +19,12 @@ function Footer() {
         { label: "FAQ", href: "#faq" },
       ]
     : [
-        { label: "Serviços", href: "#servicos" },
-        { label: "Sobre", href: "#sobre" },
-        { label: "Preços", href: "#precos" },
-        { label: "Dúvidas", href: "#duvidas" },
-        { label: "Contato", href: "#contato" },
+        { label: "Serviços", href: "/#servicos" },
+        { label: "Sobre", href: "/#sobre" },
+        { label: "Preços", href: "/#precos" },
+        { label: "Dúvidas", href: "/#duvidas" },
+        { label: "Website", href: "/website" },
+        { label: "Contato", href: "/#contato" },
       ];
 
   const footerText = isEnglish

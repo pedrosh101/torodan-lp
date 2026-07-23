@@ -5,11 +5,21 @@ import logo from "../../public/logo.png";
 import { Button } from "./ui/button";
 import { useEffect, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+  SheetClose,
+} from "./ui/sheet";
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const isEnglish = pathname.startsWith("/en");
 
@@ -84,12 +94,81 @@ function Navbar() {
           ))}
         </nav>
 
-        <a href="https://wa.me/5538998162313" target="_blank">
-          <Button className="bg-clr3 hover:bg-clr1 text-clr2 transition-all duration-300 cursor-pointer tracking-[0.08em] text-xs font-medium px-6 py-2.5 rounded-full gap-2.5">
-            {ctaLabel}
-            <FaWhatsapp className="w-3.5 h-3.5" />
-          </Button>
-        </a>
+        <div className="flex items-center gap-4">
+          <a
+            href="https://wa.me/5538998162313"
+            target="_blank"
+            className="hidden md:inline-block"
+          >
+            <Button className="bg-clr3 hover:bg-clr1 text-clr2 transition-all duration-300 cursor-pointer tracking-[0.08em] text-xs font-medium px-6 py-2.5 rounded-full gap-2.5">
+              {ctaLabel}
+              <FaWhatsapp className="w-3.5 h-3.5" />
+            </Button>
+          </a>
+
+          {/* Mobile Menu Trigger */}
+          <Sheet open={open} onOpenChange={setOpen}>
+            <SheetTrigger className="md:hidden text-clr1 p-1" aria-label="Abrir menu">
+              <Menu size={26} />
+            </SheetTrigger>
+
+            <SheetContent
+              side="right"
+              className="w-[85vw] max-w-sm bg-clr2 border-l border-clr1/10 p-0 flex flex-col [&>button]:hidden"
+            >
+              {/* Header */}
+              <SheetHeader className="h-20 px-5 flex flex-row items-center justify-between border-b border-clr1/10 space-y-0">
+                <SheetTitle>
+                  <Link
+                    href={isEnglish ? "/en" : "/"}
+                    onClick={() => setOpen(false)}
+                    className="flex items-center"
+                  >
+                    <Image
+                      src={logo}
+                      alt="Torodan"
+                      width={110}
+                      className="opacity-90"
+                    />
+                  </Link>
+                </SheetTitle>
+
+                <SheetClose className="text-clr1 p-1" aria-label="Fechar menu">
+                  <X size={24} />
+                </SheetClose>
+              </SheetHeader>
+
+              {/* Links */}
+              <ul className="flex-1 overflow-y-auto px-5 py-6 flex flex-col gap-0 text-[17px] font-medium text-clr1 tracking-wide">
+                {navItems.map(({ label, href }) => (
+                  <li key={href}>
+                    <a
+                      href={href}
+                      onClick={() => setOpen(false)}
+                      className="flex items-center py-3.5 border-b border-clr1/10"
+                    >
+                      {label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Footer: CTA */}
+              <div className="px-5 py-5 border-t border-clr1/10">
+                <a
+                  href="https://wa.me/5538998162313"
+                  target="_blank"
+                  onClick={() => setOpen(false)}
+                >
+                  <Button className="w-full bg-clr3 hover:bg-clr1 text-clr2 transition-all duration-300 cursor-pointer tracking-[0.08em] text-xs font-medium px-6 py-3 rounded-full gap-2.5 justify-center">
+                    {ctaLabel}
+                    <FaWhatsapp className="w-3.5 h-3.5" />
+                  </Button>
+                </a>
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </header>
   );

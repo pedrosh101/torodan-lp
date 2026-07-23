@@ -150,13 +150,21 @@ export default function Home() {
       {/* HOW WE WORK */}
       <section id="sobre" className="lg:py-32 py-18 bg-clr2">
         <div className={W}>
-          <div className="grid md:grid-cols-2 gap-10 items-center">
+          <div className="grid md:grid-cols-2 gap-24 items-center">
+            <div className="relative">
+              <div className="absolute -inset-4 bg-clr3/5 rounded-3xl -z-10" />
+              <Image
+                src={computer}
+                alt="Computador"
+                className="rounded-xl shadow-2xl object-cover w-full aspect-4/3"
+              />
+            </div>
             <div>
               <p className="text-[10px] tracking-[0.35em] uppercase text-clr3 font-semibold mb-4">
                 SOBRE A TORODAN
               </p>
               <h2 className="text-4xl md:text-5xl font-bold leading-tight tracking-[-0.02em] mb-10">
-                Mais do que entregar peças, trabalhamos para fazer sua empresa
+                Mais do que entregar posts, trabalhamos para fazer sua empresa
                 crescer no digital.
               </h2>
 
@@ -181,15 +189,6 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-            </div>
-
-            <div className="relative">
-              <div className="absolute -inset-4 bg-clr3/5 rounded-3xl -z-10" />
-              <Image
-                src={computer}
-                alt="Computador"
-                className="rounded-xl shadow-2xl object-cover w-full aspect-4/3"
-              />
             </div>
           </div>
         </div>
