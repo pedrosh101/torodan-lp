@@ -13,7 +13,9 @@
   src: url("../../public/fonts/agr-reg.otf");
 }
 
-
+html{
+  scroll-behavior: smooth;
+}
 
 @theme inline {
   --color-background: var(--background);
