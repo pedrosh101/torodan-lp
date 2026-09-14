@@ -37,7 +37,7 @@ export default function Studio() {
           <div>
             <RevealText>
 
-            <h2 className="text-3xl md:text-4xl font-bold leading-tight tracking-[-0.02em] text-clr1 text-justify">
+            <h2 className="text-2xl md:text-3xl 2xl:text-4xl font-medium md:font-bold leading-tight tracking-[-0.02em] text-clr1 md:text-justify">
               Atuamos na criação audiovisual para marcas, projetos culturais e negócios que desejam comunicar sua identidade através de imagens. Desenvolvemos cada produção de forma personalizada, unindo fotografia, vídeo e direção criativa para construir narrativas visuais com intenção e personalidade.
             </h2>
             </RevealText>
