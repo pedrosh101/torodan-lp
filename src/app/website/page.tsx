@@ -29,7 +29,7 @@ export default function WebsiteReview() {
     <div className="min-h-screen flex flex-col font-sans bg-clr2 text-clr1 scroll-smooth">
       <Navbar />
 
-      <section className="relative flex items-center min-h-[80vh]  pt-28 pb-16 overflow-hidden bg-clr1">
+      <section className="relative flex items-center min-h-[80vh] pt-28 pb-16 overflow-hidden bg-clr1">
         <div className="absolute inset-0">
           <Image
             src="/images/websites.webp"

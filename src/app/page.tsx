@@ -6,6 +6,7 @@ import Brands from "@/components/brands";
 import Image from "next/image";
 import computer from "../../public/images/card.webp";
 import Footer from "@/components/footer";
+import Link from "next/link";
 
 const W = "max-w-screen-2xl mx-auto px-6 md:px-16";
 
@@ -90,74 +91,79 @@ export default function Home() {
                 title: "Websites Estratégicos",
                 desc: "Sites modernos, rápidos e preparados para apresentar sua empresa e gerar novas oportunidades de negócio.",
                 num: "01",
+                link: "/website",
               },
               {
                 icon: Camera,
                 title: "Fotografia Profissional",
                 desc: "Fotografia profissional e criação de conteúdo para destacar sua marca em todos os canais.",
                 num: "02",
+                link: "/studio",
               },
               {
                 icon: Share2,
                 title: "Gestão de Presença Digital",
                 desc: "Planejamento, produção de conteúdo e gestão das redes sociais para manter sua empresa ativa, profissional e relevante.",
                 num: "03",
+                link: "",
               },
-            ].map(({ icon: Icon, title, desc, num }, i) => (
-              <div
-                key={i}
-                className="
-            bg-clr1
-            border border-clr2/10
-            rounded-xl
-            md:border-0
-            md:rounded-none
-            p-8 md:p-12
-            flex flex-col gap-8
-            group
-            md:hover:bg-clr3
-            transition-all duration-500
-            cursor-default
-          "
-              >
-                <div className="flex items-start justify-between">
-                  <Icon className="w-8 h-8 text-clr3 md:group-hover:text-clr2 transition-colors duration-500" />
+            ].map(({ icon: Icon, title, desc, num, link }, i) => {
+              const isLinkEmpty = !link;
+              return (
+                <Link
+                  href={isLinkEmpty ? "#" : link}
+                  key={i}
+                  className={`
+                    bg-clr1
+                    border border-clr2/10
+                    rounded-xl
+                    md:border-0
+                    md:rounded-none
+                    p-8 md:p-12
+                    flex flex-col gap-8
+                    group
+                    transition-all duration-500
+                    ${isLinkEmpty 
+                      ? "cursor-default pointer-events-none" 
+                      : "md:hover:bg-clr3"
+                    }
+                  `}
+                >
+                  <div className="flex items-start justify-between">
+                    <Icon className="w-8 h-8 text-clr3 md:group-hover:text-clr2 transition-colors duration-500" />
 
-                  <span className="text-[10px] tracking-[0.3em] text-clr2/40 md:text-clr2/30 md:group-hover:text-clr2/60 font-medium transition-colors duration-500">
-                    {num}
-                  </span>
-                </div>
+                    <span className="text-[10px] tracking-[0.3em] text-clr2/40 md:text-clr2/30 md:group-hover:text-clr2/60 font-medium transition-colors duration-500">
+                      {num}
+                    </span>
+                  </div>
 
-                <div>
-                  <h4 className="text-xl font-semibold mb-3 text-clr2 leading-snug tracking-[-0.01em]">
-                    {title}
-                  </h4>
-
-                  <p className="text-clr2/70 md:text-clr2/60 md:group-hover:text-clr2/80 leading-relaxed text-sm transition-colors duration-500">
-                    {desc}
-                  </p>
-                </div>
-
-                <div className="mt-auto">
-                  <div className="w-16 md:w-8 h-px bg-clr3 md:group-hover:bg-clr2 md:group-hover:w-16 transition-all duration-500" />
-                </div>
-              </div>
-            ))}
+                  <div>
+                    <h4 className="text-xl font-semibold mb-3 text-clr2">
+                      {title}
+                    </h4>
+                    <p className="text-sm text-clr2/70 leading-relaxed">
+                      {desc}
+                    </p>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
+
         </div>
       </section>
 
-      {/* HOW WE WORK */}
+      {/* SOBRE */}
       <section id="sobre" className="lg:py-32 py-18 bg-clr2">
         <div className={W}>
           <div className="grid md:grid-cols-2 md:gap-24 gap-16 items-center">
             <div className="relative">
               <div className="absolute -inset-4 bg-clr3/5 rounded-3xl -z-10" />
-<Image
-  src={computer}
-  alt="Computador"
-  className="rounded-xl shadow-2xl object-cover w-full aspect-video md:aspect-4/3"
-/>
+              <Image
+                src={computer}
+                alt="Computador"
+                className="rounded-xl shadow-2xl object-cover w-full aspect-video md:aspect-4/3"
+              />
             </div>
             <div>
               <p className="text-[10px] tracking-[0.35em] uppercase text-clr3 font-semibold mb-4">
@@ -282,7 +288,7 @@ export default function Home() {
                   {plan.desc}
                 </p>
 
-                <div className="mb-8">
+                {/* <div className="mb-8">
                   <span className="text-4xl font-extrabold tracking-[-0.02em] text-clr2">
                     R$ {plan.price}
                   </span>
@@ -293,7 +299,7 @@ export default function Home() {
                   >
                     /mês
                   </span>
-                </div>
+                </div> */}
 
                 <div
                   className={`w-full h-px mb-8 ${

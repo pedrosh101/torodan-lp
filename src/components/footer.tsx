@@ -20,9 +20,8 @@ function Footer() {
       ]
     : [
         { label: "Serviços", href: "/#servicos" },
-        { label: "Sobre", href: "/#sobre" },
-        { label: "Preços", href: "/#precos" },
         { label: "Dúvidas", href: "/#duvidas" },
+        { label: "Studio", href: "/studio" },
         { label: "Website", href: "/website" },
         { label: "Contato", href: "/#contato" },
       ];
@@ -137,7 +136,7 @@ function Footer() {
         </div>
 
         <p className="text-[10px] mt-8 text-center md:text-left text-clr2/60 font-light tracking-wide">
-           {footerText.copyright}
+          {footerText.copyright}
         </p>
       </div>
     </footer>

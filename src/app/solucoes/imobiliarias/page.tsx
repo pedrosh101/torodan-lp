@@ -25,9 +25,7 @@ export default function Page() {
     <div className="min-h-screen flex flex-col font-sans bg-clr2 text-clr1 scroll-smooth">
       <Navbar />
 
-      {/* HERO */}
       <section className="relative flex items-center min-h-[80vh] pt-40 pb-24 overflow-hidden">
-        {/* Grid de fundo */}
         <div
           className="absolute inset-0 opacity-[0.035]"
           style={{

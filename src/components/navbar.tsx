@@ -32,9 +32,8 @@ function Navbar() {
       ]
     : [
         { label: "Serviços", href: "/#servicos" },
-        { label: "Sobre", href: "/#sobre" },
-        { label: "Preços", href: "/#precos" },
         { label: "Dúvidas", href: "/#duvidas" },
+        { label: "Studio", href: "/studio" },
         { label: "Website", href: "/website" },
         { label: "Contato", href: "/#contato" },
       ];

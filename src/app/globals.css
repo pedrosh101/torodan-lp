@@ -21,6 +21,7 @@ html{
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-dmsans: "dmsans";
+  --font-codiar: "codiar"; 
   --font-agr-reg: "agr-reg";
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -129,6 +130,38 @@ html{
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+}
+
+@font-face {
+  font-family: "codiar";
+  src: url("/fonts/codiar-Light.otf");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "codiar";
+  src: url("/fonts/codiar-Regular.otf");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "codiar";
+  src: url("/fonts/codiar-Medium.otf");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "codiar";
+  src: url("/fonts/codiar-Bold.otf");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
 @layer base {
