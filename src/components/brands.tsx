@@ -8,7 +8,7 @@ import brand1 from "../../public/Frame16.png";
 import brand2 from "../../public/Frame17.png";
 import brand3 from "../../public/Frame18.png";
 import brand4 from "../../public/Frame19.png";
-import brand5 from "../../public/Frame20.png";
+import brand5 from "../../public/descIst.png";
 import brand6 from "../../public/Frame21.png";
 
 const brands = [
@@ -22,8 +22,8 @@ const brands = [
   },
   {
     src: brand5,
-    alt: "Ar Livre Editora",
-    href: "https://arlivreeditora.com.br/",
+    alt: "Descubra Istambul",
+    href: "descubraistambul.com",
   },
   { src: brand6, alt: "Art of Mala", href: "https://artofmala.netlify.app/" },
 ];

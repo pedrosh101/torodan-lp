@@ -93,13 +93,13 @@ export default function Home() {
                 num: "01",
                 link: "/website",
               },
-              {
-                icon: Camera,
-                title: "Fotografia Profissional",
-                desc: "Fotografia profissional e criação de conteúdo para destacar sua marca em todos os canais.",
-                num: "02",
-                link: "/studio",
-              },
+{
+  icon: Camera,
+  title: "Produção Audiovisual",
+  desc: "Criamos fotografias e vídeos institucionais que apresentam sua empresa, valorizam sua marca e aproximam pessoas.",
+  num: "02",
+  link: "/studio",
+},
               {
                 icon: Share2,
                 title: "Gestão de Presença Digital",

@@ -10,6 +10,7 @@ import {
 import Image from "next/image";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import Brands from "@/components/brands";
 
 const W = "max-w-screen-2xl mx-auto px-6 md:px-16";
 
@@ -55,23 +56,29 @@ export default function WebsiteReview() {
             Mais credibilidade, mais confiança e uma presença online que
             trabalha por você 24 horas por dia.
           </p>
+<div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 sm:gap-6 w-full">
+  <a 
+    href={WHATSAPP_LINK} 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="w-full sm:w-auto"
+  >
+    <Button
+      size="lg"
+      className="w-full sm:w-auto bg-clr3 hover:bg-clr1 hover:text-clr2 border border-transparent hover:border-clr1/20 text-clr2 transition-all duration-300 active:scale-95 md:hover:scale-105 cursor-pointer tracking-[0.08em] font-medium px-8 sm:px-10 py-6 rounded-full"
+    >
+      Vamos Conversar
+    </Button>
+  </a>
 
-          <div className="flex items-center gap-6">
-            <a href={WHATSAPP_LINK} target="_blank">
-              <Button
-                size="lg"
-                className="bg-clr3 hover:bg-clr1 hover:text-clr2 border border-transparent hover:border-clr1/20 text-clr2 transition-all duration-300 hover:scale-105 cursor-pointer tracking-[0.08em] font-medium px-10 py-6 rounded-full"
-              >
-                Vamos Conversar
-              </Button>
-            </a>
-            <a
-              href="#servicos"
-              className="text-sm text-clr1/70 hover:text-clr1 transition-colors tracking-widest uppercase font-medium"
-            >
-              Como Trabalhamos
-            </a>
-          </div>
+  <a
+    href="#servicos"
+    className="w-full sm:w-auto text-center py-3 sm:py-2 px-4 text-xs sm:text-sm text-clr1/70 hover:text-clr1 transition-colors tracking-widest uppercase font-medium"
+  >
+    Como Trabalhamos
+  </a>
+</div>
+
         </div>
       </section>
 
@@ -167,7 +174,7 @@ export default function WebsiteReview() {
       {/* COMO FUNCIONA */}
       <section className="lg:py-32 py-18 bg-clr2 text-clr1">
         <div className={W}>
-          <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-20 items-start">
+          <div className="grid lg:grid-cols-[0.9fr_1.1fr] md:gap-20 gap-10 items-start">
             {/* ESQUERDA */}
             <div className="md:sticky top-28">
               <p className="text-[10px] tracking-[0.35em] uppercase text-clr3 font-semibold mb-5">
@@ -255,7 +262,7 @@ export default function WebsiteReview() {
       {/* SOBRE */}
       <section className="lg:py-32 py-18 bg-clr1">
         <div
-          className={`${W} grid lg:grid-cols-[0.9fr_1.1fr] gap-20 items-start`}
+          className={`${W} grid lg:grid-cols-[0.9fr_1.1fr] md:gap-20 gap-10 items-start`}
         >
           {/* ESQUERDA */}
           <div>
@@ -387,6 +394,7 @@ export default function WebsiteReview() {
           </div>
         </div>
       </section>
+      <Brands />
 
       {/* CTA */}
       <section className="relative lg:py-32 py-18 bg-clr3 overflow-hidden">
@@ -423,6 +431,7 @@ export default function WebsiteReview() {
           </a>
         </div>
       </section>
+        
 
       <Footer />
     </div>
